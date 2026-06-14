@@ -200,6 +200,138 @@ footer{
     © 2026 TakaoLog
 
 </footer>
-
+<div id="chartdiv" style="width:800px;height:500px"></div>
+<script>
+var visitedplaces_config = {
+  "map": "world",
+  "projection": "geoOrthographic",
+  "theme": "light-blue",
+  "water": 1,
+  "graticule": 0,
+  "names": 1,
+  "duration": 2000,
+  "placeduration": 200,
+  "slider": 0,
+  "autoplay": 1,
+  "autozoom": "none",
+  "autostep": 1,
+  "pie": 1,
+  "home": "JP",
+  "data": [
+    {
+      "places": [
+        "US",
+        "CA"
+      ],
+      "text": "North America",
+      "position": {
+        "zoomLevel": 1.6,
+        "geoPoint": {
+          "longitude": -100.6,
+          "latitude": 44.4
+        },
+        "rotationX": 100.6,
+        "rotationY": -44.4
+      }
+    },
+    {
+      "places": [
+        "GB",
+        "FR",
+        "DE",
+        "ES",
+        "BE",
+        "RU",
+        "FI",
+        "EE",
+        "LV",
+        "LT",
+        "PL",
+        "PT",
+        "IE",
+        "NL",
+        "CZ",
+        "AT",
+        "SK",
+        "HU"
+      ],
+      "text": "Europe",
+      "position": {
+        "zoomLevel": 2.4,
+        "geoPoint": {
+          "longitude": 12.1,
+          "latitude": 53.3
+        },
+        "rotationX": -12.1,
+        "rotationY": -53.3
+      }
+    },
+    {
+      "places": [
+        "HK",
+        "KR",
+        "TW",
+        "VN",
+        "SG",
+        "TH",
+        "KH",
+        "MY",
+        "ID",
+        "PH",
+        "CN",
+        "IN",
+        "TJ",
+        "UZ",
+        "KG",
+        "KZ",
+        "MN"
+      ],
+      "text": "Asia",
+      "position": {
+        "zoomLevel": 1.5,
+        "geoPoint": {
+          "longitude": 83.8,
+          "latitude": 33.3
+        },
+        "rotationX": -83.8,
+        "rotationY": -33.3
+      }
+    },
+    {
+      "places": [
+        "GU",
+        "MP",
+        "PW"
+      ],
+      "text": "Oceania",
+      "position": {
+        "zoomLevel": 1.9,
+        "geoPoint": {
+          "longitude": 134.3,
+          "latitude": -25.7
+        },
+        "rotationX": -134.3,
+        "rotationY": 25.7
+      }
+    },
+    {
+      "places": [
+        "JP"
+      ],
+      "text": "My Home",
+      "position": {
+        "zoomLevel": 1,
+        "geoPoint": {
+          "longitude": 0,
+          "latitude": 0
+        },
+        "rotationX": -137.8,
+        "rotationY": -37.5
+      }
+    }
+  ]
+};
+</script>
+<script src="https://visitedplaces.com/embed.js"></script>
 </body>
 </html>

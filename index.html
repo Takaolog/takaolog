@@ -62,12 +62,56 @@ h2{
     padding-left:12px;
 }
 
-.category{
-    font-size:1.1rem;
+.quote{
+    font-style:italic;
+    color:#666;
+    margin-top:20px;
 }
 
-.category p{
-    margin:10px 0;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin:25px 0;
+}
+
+.stat-card{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+}
+
+.stat-card strong{
+    display:block;
+    font-size:1.4rem;
+    color:#1f2937;
+}
+
+#chartdiv{
+    width:100%;
+    height:550px;
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.category{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.category-card{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:20px;
+    border:1px solid #e5e7eb;
+}
+
+.category-card strong{
+    font-size:1.2rem;
 }
 
 .article-list{
@@ -108,10 +152,18 @@ footer{
     color:#777;
 }
 
-.quote{
-    font-style:italic;
-    color:#666;
-    margin-top:20px;
+@media(max-width:600px){
+    header{
+        padding:70px 20px;
+    }
+
+    header h1{
+        font-size:3rem;
+    }
+
+    #chartdiv{
+        height:420px;
+    }
 }
 
 </style>
@@ -157,12 +209,52 @@ footer{
 
 <section>
 
+    <h2>Visited Countries</h2>
+
+    <p>
+        バックパッカーとして訪れた国々と、路上で音楽を届けてきた場所の記録です。
+    </p>
+
+    <div class="stats">
+        <div class="stat-card">
+            <strong>20年以上</strong>
+            バックパッカー歴
+        </div>
+
+        <div class="stat-card">
+            <strong>20ヶ国以上</strong>
+            バスキング経験
+        </div>
+
+        <div class="stat-card">
+            <strong>世界各地</strong>
+            旅の記録
+        </div>
+    </div>
+
+    <div id="chartdiv"></div>
+
+</section>
+
+<section>
+
     <h2>Category</h2>
 
     <div class="category">
-        <p>🌏 旅</p>
-        <p>📚 教育</p>
-        <p>🎸 音楽</p>
+        <div class="category-card">
+            <strong>🌏 旅</strong>
+            <p>バックパッカー旅、海外生活、移動の記録。</p>
+        </div>
+
+        <div class="category-card">
+            <strong>📚 教育</strong>
+            <p>学び、英語、数学、教員経験から考えたこと。</p>
+        </div>
+
+        <div class="category-card">
+            <strong>🎸 音楽</strong>
+            <p>ギター、歌、バスキング、旅先での演奏。</p>
+        </div>
     </div>
 
 </section>
@@ -196,11 +288,9 @@ footer{
 </div>
 
 <footer>
-
     © 2026 TakaoLog
-
 </footer>
-<div id="chartdiv" style="width:800px;height:500px"></div>
+
 <script>
 var visitedplaces_config = {
   "map": "world",
@@ -332,6 +422,9 @@ var visitedplaces_config = {
   ]
 };
 </script>
+
 <script src="https://visitedplaces.com/embed.js"></script>
+
 </body>
 </html>
+```

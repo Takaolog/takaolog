@@ -309,10 +309,6 @@ footer{
 
     <h2>Featured Video</h2>
 
-    <p>
-        路上演奏の記録。
-    </p>
-
     <div class="video-wrap">
         <iframe
             src="https://www.youtube.com/embed/YaqxqJgBay8"
@@ -492,6 +488,14 @@ var visitedplaces_config = {
 </script>
 
 <script src="https://visitedplaces.com/embed.js"></script>
+
+<script>
+setTimeout(function(){
+    if (window.location.search) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+}, 1500);
+</script>
 
 </body>
 </html>

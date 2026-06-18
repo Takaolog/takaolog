@@ -270,7 +270,7 @@ footer{
 
 <header>
 <video class="header-video" autoplay muted loop playsinline>
-<source src="main_background.mp4" type="video/mp4">
+<source src="hero_compressed(1).mp4" type="video/mp4">
 </video>
 <div class="header-overlay"></div>
 <div class="header-content">
@@ -624,6 +624,14 @@ setTimeout(function(){
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }, 1500);
+</script>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', function(){
+  const v = document.querySelector('.header-video');
+  if(v){ v.playbackRate = 0.7; }
+});
 </script>
 
 </body>

@@ -14,7 +14,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ヨーロッパ人のフランス観、イギリス人のロンドン観｜旅人パイセンに聞いてみた Vol.2</title>
+  <title>ヨーロッパ人のフランス観、イギリス人のロンドン観｜旅人パイセンに聞いてみた🤔 Vol.2</title>
 
   <style>
     body {
@@ -92,13 +92,67 @@
       color: #555;
       font-size: 0.95rem;
     }
+  
+    .article-nav {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .nav-article {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 20px 22px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      min-height: 120px;
+    }
+    .nav-article.prev {
+      border-left: 5px solid #999;
+    }
+    .nav-article.next {
+      border-left: 5px solid #4a90e2;
+    }
+    .nav-article:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+    .nav-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .nav-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.5;
+      color: #222;
+    }
+    .nav-subtitle {
+      margin-top: 6px;
+      font-size: 0.94rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 
 </head>
 <body>
 <main>
   <h1>ヨーロッパ人のフランス観、イギリス人のロンドン観</h1>
-  <div class="subtitle">旅人パイセンに聞いてみた Vol.2</div>
+  <div class="subtitle">旅人パイセンに聞いてみた🤔 Vol.2</div>
 
   <section class="turn user">
     <div class="speaker">Takao</div>
@@ -606,9 +660,18 @@
     <p>この3つかな。</p>
     <p>特にヨーク〜リーズ〜マンチェスターを鉄道でつなぐと、「イングランドってこういう国か」がかなり立体的に見えてくると思うよ。</p>
 
-  </section>
-
-  <div class="next">次回：旅人パイセンに聞いてみた Vol.3｜ロンドンしか行かない外国人と、金沢にも行く外国人</div>
+  </section>  <div class="article-nav">
+    <a class="nav-article prev" href="episode1.html">
+      <div class="nav-label">← 前の記事へ</div>
+      <div class="nav-title">第３言語としてのスペイン語とフランス語</div>
+      <div class="nav-subtitle">旅人パイセンに聞いてみた🤔 Vol.1</div>
+    </a>
+    <a class="nav-article next" href="episode3.html">
+      <div class="nav-label">続きを読む →</div>
+      <div class="nav-title">ロンドンしか行かない外国人と、金沢にも行く外国人</div>
+      <div class="nav-subtitle">旅人パイセンに聞いてみた🤔 Vol.3</div>
+    </a>
+  </div>
 </main>
 </body>
 </html>

@@ -14,7 +14,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第３言語としてのスペイン語とフランス語｜旅人パイセンに聞いてみた Vol.1</title>
+  <title>第３言語としてのスペイン語とフランス語｜旅人パイセンに聞いてみた🤔 Vol.1</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
@@ -87,12 +87,74 @@
       border-radius: 10px;
       margin-bottom: 30px;
     }
+  
+    .subtitle {
+      font-size: 1.15rem;
+      color: #444;
+      margin: 0 0 28px;
+      font-weight: 700;
+    }
+
+  
+    .article-nav {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #ddd;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .nav-article {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 20px 22px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      min-height: 120px;
+    }
+    .nav-article.prev {
+      border-left: 5px solid #999;
+    }
+    .nav-article.next {
+      border-left: 5px solid #4a90e2;
+    }
+    .nav-article:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    }
+    .nav-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .nav-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.5;
+      color: #222;
+    }
+    .nav-subtitle {
+      margin-top: 6px;
+      font-size: 0.94rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
 <main>
   <h1>第３言語としてのスペイン語とフランス語</h1>
-  <div class="subtitle">旅人パイセンに聞いてみた Vol.1</div>
+  <div class="subtitle">旅人パイセンに聞いてみた🤔 Vol.1</div>
   
   <section class="turn user">
     <div class="speaker">Takao</div>
@@ -604,9 +666,18 @@
     <p>「外交官になりたい」<br>「国際機関で働きたい」<br>「アフリカ案件が多い」</p>
     <p>ならフランス語がかなり魅力的。</p>
     <p>面白いのは、英語ネイティブ圏だと「次に学ぶ外国語」としてスペイン語が圧倒的人気なのに対して、日本では昔からフランス語にちょっとしたブランド力があること。実用性だけで見ると、今の世界ではスペイン語の方が一歩リードしている印象があるね🇪🇸🌎。</p>
-  </section>
-
-  <div class="next">次回：旅人パイセンに聞いてみた Vol.2｜ヨーロッパ人のフランス観、イギリス人のロンドン観</div>
+  </section>  <div class="article-nav">
+    <a class="nav-article prev" href="index.html">
+      <div class="nav-label">← シリーズ一覧へ</div>
+      <div class="nav-title">旅人パイセンに聞いてみた🤔</div>
+      <div class="nav-subtitle">Vol.1〜Vol.6の記事一覧へ</div>
+    </a>
+    <a class="nav-article next" href="episode2.html">
+      <div class="nav-label">続きを読む →</div>
+      <div class="nav-title">ヨーロッパ人のフランス観、イギリス人のロンドン観</div>
+      <div class="nav-subtitle">旅人パイセンに聞いてみた🤔 Vol.2</div>
+    </a>
+  </div>
 </main>
 </body>
 </html>

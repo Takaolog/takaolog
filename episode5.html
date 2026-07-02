@@ -38,6 +38,15 @@
       color: #666;
       margin-bottom: 32px;
     }
+    .note a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .note a:hover {
+      text-decoration: underline;
+    }
+
     .turn {
       margin: 32px 0;
       padding: 20px 22px;
@@ -82,6 +91,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
+      align-items: stretch;
     }
     .nav-article {
       display: block;
@@ -93,11 +103,13 @@
       padding: 20px 22px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       min-height: 120px;
+      height: 100%;
+      box-sizing: border-box;
     }
     .nav-article.prev {
       border-left: 5px solid #999;
     }
-    .nav-article.next {
+    .nav-article.next-article {
       border-left: 5px solid #4a90e2;
     }
     .nav-article:hover {
@@ -152,6 +164,10 @@
 
     <h2>Scottishが先、Britishは状況次第</h2>
     <p>スコットランドでは、「まずScottish」という感覚がかなり強い。</p>
+    <p>実際、2022年のスコットランド国勢調査でも、「Scottish only」と答えた人は65.5%。</p>
+    <p>一方で「British only」は13.9%、「Scottish and British」は8.2%だった。</p>
+    <p>つまり「まずScottish」という感覚は、旅先で出会った人たちの印象だけでなく、統計にもかなりはっきり出ている。</p>
+    <p class="note">出典：<a href="https://www.nrscotland.gov.uk/latest-news/religion-and-ethnic-group-results-published/" target="_blank" rel="noopener noreferrer">National Records of Scotland</a></p>
     <p>ただし、これは「Englishが嫌い」という単純な話ではない。</p>
     <p>かなり雑に言えば、</p>
     <p><strong>English individual は別に嫌いじゃない。<br>でも English-dominated Westminster は信用していない。</strong></p>
@@ -171,6 +187,11 @@
       <li>スコットランド独立運動</li>
     </ul>
     <p>あたりが絡むと、かなり複雑になる。</p>
+    <p>特にBrexitは象徴的だった。</p>
+    <p>選挙管理委員会の公式結果でも、ScotlandではRemain 1,661,191票、Leave 1,018,322票。</p>
+    <p>割合で見ると、およそRemain 62%、Leave 38%だった。</p>
+    <p>つまりUK全体では離脱が決まったけれど、Scotland単体ではかなり明確に「EUに残りたい」と意思表示していた。</p>
+    <p class="note">出典：<a href="https://www.electoralcommission.org.uk/research-reports-and-data/our-reports-and-data-past-elections-and-referendums/results-and-turnout-eu-referendum/eu-referendum-results-region-scotland" target="_blank" rel="noopener noreferrer">The Electoral Commission</a></p>
 
     <h2>English側の感情</h2>
     <p>English側も一枚岩じゃない。</p>
@@ -361,7 +382,7 @@
       <div class="nav-title">日本とイギリスは似ているのか？ 〜イギリス人は「ヨーロッパ人」なのか問題〜</div>
       <div class="nav-subtitle">旅人パイセンに聞いてみた🤔 Vol.4</div>
     </a>
-    <a class="nav-article next" href="episode6.html">
+    <a class="nav-article next-article" href="episode6.html">
       <div class="nav-label">続きを読む →</div>
       <div class="nav-title">世界はこんなにも面白い 〜「旅 × 学習 × 教育」、気づいたら自分史を振り返っていた話〜</div>
       <div class="nav-subtitle">旅人パイセンに聞いてみた🤔 Vol.6</div>

@@ -81,11 +81,6 @@ header .subtitle{
     object-fit:cover;
 }
 
-.video1,
-.video2{
-    transition:opacity 0.5s ease;
-}
-
 .video1{
     opacity:1;
     z-index:0;
@@ -94,6 +89,7 @@ header .subtitle{
 .video2{
     opacity:0;
     z-index:0;
+    transition:opacity 0.5s ease;
 }
 
 
@@ -565,68 +561,36 @@ setTimeout(function(){
     let next = video2;
     let fading = false;
 
-    // Load both layers up front so a layer is never shown before its first frame is ready.
-    video1.load();
-    video2.load();
-
-    function waitUntilReady(video, callback){
-        if (video.readyState >= 3) {
-            callback();
-            return;
-        }
-
-        const onReady = function(){
-            video.removeEventListener('canplay', onReady);
-            callback();
-        };
-        video.addEventListener('canplay', onReady);
-    }
-
     function crossfade(){
         if (fading || !active.duration) return;
         fading = true;
 
-        // Prepare the next layer while it remains invisible.
-        next.pause();
         next.currentTime = 0;
+        next.play().catch(() => {});
 
-        waitUntilReady(next, function(){
-            next.play().catch(() => {});
+        next.style.opacity = '1';
+        active.style.opacity = '0';
 
-            next.style.opacity = '1';
-            active.style.opacity = '0';
-
-            setTimeout(function(){
-                active.pause();
-                active.currentTime = 0;
-
-                const temp = active;
-                active = next;
-                next = temp;
-
-                fading = false;
-                active.removeEventListener('timeupdate', checkTime);
-                active.addEventListener('timeupdate', checkTime);
-            }, 500);
-        });
+        setTimeout(function(){
+            active.pause();
+            active.currentTime = 0;
+            const temp = active;
+            active = next;
+            next = temp;
+            fading = false;
+            active.addEventListener('timeupdate', checkTime);
+        }, 500);
     }
 
     function checkTime(){
         if (!active.duration || fading) return;
-
         if (active.currentTime >= active.duration - 0.5){
             active.removeEventListener('timeupdate', checkTime);
             crossfade();
         }
     }
 
-    waitUntilReady(video1, function(){
-        video1.play().catch(() => {});
-        video1.addEventListener('timeupdate', checkTime);
-    });
-
-    // Start loading the second layer immediately, but keep it invisible.
-    waitUntilReady(video2, function(){});
+    video1.addEventListener('timeupdate', checkTime);
 })();
 </script>
 

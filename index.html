@@ -563,55 +563,27 @@ setTimeout(function(){
 
     function crossfade(){
         if (fading || !active.duration) return;
+        fading = true;
 
-        // video1 → video2 のときだけ、自然なクロスディゾルブ。
-        // video2 → video1 は従来どおり切り替え（白アウトが出てもOK）。
-        if (active === video1) {
-            fading = true;
+        next.currentTime = 0;
+        next.play().catch(() => {});
 
-            next.currentTime = 0;
-            next.play().catch(() => {});
+        next.style.opacity = '1';
+        active.style.opacity = '0';
 
-            next.style.opacity = '1';
-            active.style.opacity = '0';
-
-            setTimeout(function(){
-                active.pause();
-                active.currentTime = 0;
-
-                const temp = active;
-                active = next;
-                next = temp;
-                fading = false;
-
-                active.addEventListener('timeupdate', checkTime);
-            }, 500);
-
-        } else {
-            // video2 の終端は、あえてシンプルに切り替える
-            next.currentTime = 0;
-            next.play().catch(() => {});
-
-            next.style.opacity = '1';
-            active.style.opacity = '0';
-
-            setTimeout(function(){
-                active.pause();
-                active.currentTime = 0;
-
-                const temp = active;
-                active = next;
-                next = temp;
-
-                fading = false;
-                active.addEventListener('timeupdate', checkTime);
-            }, 50);
-        }
+        setTimeout(function(){
+            active.pause();
+            active.currentTime = 0;
+            const temp = active;
+            active = next;
+            next = temp;
+            fading = false;
+            active.addEventListener('timeupdate', checkTime);
+        }, 500);
     }
 
     function checkTime(){
         if (!active.duration || fading) return;
-
         if (active.currentTime >= active.duration - 0.5){
             active.removeEventListener('timeupdate', checkTime);
             crossfade();

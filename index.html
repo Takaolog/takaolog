@@ -66,6 +66,32 @@ header .subtitle{
     letter-spacing:2px;
     color:#cbd5e1;
 }
+/* Smooth crossfade for the header background video */
+.video-container{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.header-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video1{
+    opacity:1;
+    z-index:0;
+}
+
+.video2{
+    opacity:0;
+    z-index:0;
+    transition:opacity 0.5s ease;
+}
+
 
 
 
@@ -295,9 +321,14 @@ footer{
 <body>
 
 <header>
-<video class="header-video" autoplay muted loop playsinline>
+<div class="video-container">
+<video class="header-video video1" autoplay muted playsinline>
 <source src="main_background.mp4" type="video/mp4">
 </video>
+<video class="header-video video2" muted playsinline>
+<source src="main_background.mp4" type="video/mp4">
+</video>
+</div>
 <div class="header-overlay"></div>
 <div class="header-content">
 
@@ -516,6 +547,51 @@ setTimeout(function(){
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 }, 1500);
+</script>
+
+
+<script>
+(function(){
+    const video1 = document.querySelector('.video1');
+    const video2 = document.querySelector('.video2');
+
+    if (!video1 || !video2) return;
+
+    let active = video1;
+    let next = video2;
+    let fading = false;
+
+    function crossfade(){
+        if (fading || !active.duration) return;
+        fading = true;
+
+        next.currentTime = 0;
+        next.play().catch(() => {});
+
+        next.style.opacity = '1';
+        active.style.opacity = '0';
+
+        setTimeout(function(){
+            active.pause();
+            active.currentTime = 0;
+            const temp = active;
+            active = next;
+            next = temp;
+            fading = false;
+            active.addEventListener('timeupdate', checkTime);
+        }, 500);
+    }
+
+    function checkTime(){
+        if (!active.duration || fading) return;
+        if (active.currentTime >= active.duration - 0.5){
+            active.removeEventListener('timeupdate', checkTime);
+            crossfade();
+        }
+    }
+
+    video1.addEventListener('timeupdate', checkTime);
+})();
 </script>
 
 </body>

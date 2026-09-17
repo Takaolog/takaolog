@@ -568,22 +568,27 @@ setTimeout(function(){
         next.currentTime = 0;
         next.play().catch(() => {});
 
+        // Both videos fade simultaneously.
         next.style.opacity = '1';
         active.style.opacity = '0';
 
         setTimeout(function(){
             active.pause();
             active.currentTime = 0;
+
             const temp = active;
             active = next;
             next = temp;
+
             fading = false;
+
             active.addEventListener('timeupdate', checkTime);
         }, 500);
     }
 
     function checkTime(){
         if (!active.duration || fading) return;
+
         if (active.currentTime >= active.duration - 0.5){
             active.removeEventListener('timeupdate', checkTime);
             crossfade();

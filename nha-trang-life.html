@@ -93,7 +93,7 @@
       padding-top: 24px;
       border-top: 1px solid #ddd;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 16px;
     }
 
@@ -103,27 +103,9 @@
       color: inherit;
       background: #f7f7f7;
       border: 1px solid #ddd;
+      border-left: 5px solid #777;
       border-radius: 14px;
       padding: 20px 22px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      min-height: 120px;
-    }
-
-    .nav-article.prev {
-      border-left: 5px solid #999;
-    }
-
-    .nav-article.next {
-      border-left: 5px solid #4a90e2;
-    }
-
-    .nav-article.home {
-      border-left: 5px solid #777;
-    }
-
-    .nav-article:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     }
 
     .nav-label {

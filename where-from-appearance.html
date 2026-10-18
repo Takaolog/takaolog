@@ -88,7 +88,7 @@
     padding-top: 24px;
     border-top: 1px solid #ddd;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
@@ -100,8 +100,6 @@
     border: 1px solid #ddd;
     border-radius: 14px;
     padding: 20px 22px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    min-height: 120px;
   }
 
   .nav-article.prev {
@@ -114,11 +112,6 @@
 
   .nav-article.home {
     border-left: 5px solid #777;
-  }
-
-  .nav-article:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
   }
 
   .nav-label {
@@ -151,11 +144,7 @@
     h1 {
       font-size: 1.65rem;
     }
-
-    .article-nav {
-      grid-template-columns: 1fr;
-    }
-  }
+}
 </style>
   </head>
 
@@ -285,15 +274,15 @@
 誰かの目に映る日本人のひとりなのだから。</p>
 
     <div class="article-nav">
-      <a class="nav-article home" href="https://takaolog.jp/">
-        <div class="nav-label">Main Pageへ戻る →</div>
-        <div class="nav-title">takaolog</div>
-        <div class="nav-subtitle">From Japan to Somewhere</div>
-      </a>
       <a class="nav-article next" href="where-from-language.html">
         <div class="nav-label">後編を読む →</div>
         <div class="nav-title">後編：旅先の何気ない一言から考える、言語とアイデンティティ</div>
         <div class="nav-subtitle">歴史の次は、言語と文化。</div>
+      </a>
+      <a class="nav-article home" href="https://takaolog.jp/">
+        <div class="nav-label">Main Pageへ戻る →</div>
+        <div class="nav-title">takaolog</div>
+        <div class="nav-subtitle">From Japan to Somewhere</div>
       </a>
     </div>
   </main>

@@ -27,10 +27,12 @@ figure{margin:28px 0 34px}figure img{display:block;width:100%;height:auto;border
 .article-body h2{scroll-margin-top:20px}
 .closing-photo{margin-top:38px;margin-bottom:34px}
 .article-nav{margin-top:56px;padding-top:24px;border-top:1px solid #ddd;display:grid;grid-template-columns:1fr;gap:16px}
-.nav-article{display:block;text-decoration:none;color:inherit;background:#f7f7f7;border:1px solid #ddd;border-left:5px solid #777;border-radius:14px;padding:20px 22px}
+.nav-article{display:block;text-decoration:none;color:inherit;background:#f7f7f7;border:1px solid #ddd;border-radius:14px;padding:20px 22px}
+.nav-article.related{border-left:5px solid #4a90e2}
+.nav-article.home{border-left:5px solid #777}
 .nav-label{font-size:.9rem;color:#666;margin-bottom:8px;font-weight:700}
 .nav-title{font-size:1.08rem;font-weight:800;line-height:1.5;color:#222}
-.nav-subtitle{margin-top:6px;font-size:.94rem;color:#555;line-height:1.6;font-style:italic}
+.nav-subtitle{display:inline;margin-top:0;font-size:.94rem;color:#555;line-height:1.6;font-style:italic}
 @media(max-width:640px){main{padding-top:34px}h1{font-size:1.65rem}}
 </style>
 </head>
@@ -209,7 +211,17 @@ SNSを通じて、旅の様子を映像や画像で発信し始めた。</p>
 
 <figure class="closing-photo"><img src="travel-sharing-photo2.jpg" alt="廈門・同安区の海岸から見た、海に昇る朝日" loading="lazy"></figure>
 
-<div class="article-nav"><a class="nav-article" href="https://takaolog.jp/">
-<div class="nav-label">Main Pageへ戻る →</div><div class="nav-title">takaolog</div>
-<div class="nav-subtitle">somewhere to somewhere</div></a></div>
+<div class="article-nav">
+<a class="nav-article related" href="xiamen1.html">
+<div class="nav-label">廈門・集美編を読む →</div>
+<div class="nav-title">廈門で、毎晩通うpubができた。</div>
+</a>
+<a class="nav-article related" href="xiamen3.html">
+<div class="nav-label">廈門・入島編を読む →</div>
+</a>
+<a class="nav-article home" href="https://takaolog.jp/">
+<div class="nav-label">Main Pageへ戻る →</div>
+<div class="nav-title">takaolog <span class="nav-subtitle">somewhere to somewhere</span></div>
+</a>
+</div>
 </main></body></html>

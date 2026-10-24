@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NL034DM9DP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NL034DM9DP');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>takaolog</title>
+<link href="/favicon.svg?v=2" rel="icon" type="image/svg+xml"/>
+<style>
+
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#f5f6f8;
+    color:#333;
+    line-height:1.8;
+}
+
+header{
+    position:relative;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+    overflow:hidden;
+}
+.header-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+.header-overlay{
+    position:absolute;
+    inset:0;
+    background:transparent;
+    z-index:1;
+}
+.header-content{
+    position:relative;
+    z-index:2;
+}
+
+header h1{
+    margin:0;
+    font-size:4rem;
+    font-weight:700;
+}
+
+header .subtitle{
+    margin-top:10px;
+    font-size:1.2rem;
+    letter-spacing:2px;
+    color:#cbd5e1;
+}
+/* Smooth crossfade for the header background video */
+.video-container{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.header-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video1{
+    opacity:1;
+    z-index:0;
+}
+
+.video2{
+    opacity:0;
+    z-index:0;
+    transition:opacity 0.5s ease;
+}
+
+
+
+
+header p{
+    margin-top:20px;
+    font-size:1.1rem;
+    color:#e5e7eb;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+section{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,0.05);
+}
+
+h2{
+    margin-top:0;
+    border-left:5px solid #2563eb;
+    padding-left:12px;
+}
+
+.quote{
+    font-style:italic;
+    color:#666;
+    margin-top:20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin:25px 0;
+}
+
+.stat-card{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+}
+
+.stat-card strong{
+    display:block;
+    font-size:1.4rem;
+    color:#1f2937;
+}
+
+#chartdiv{
+    width:100%;
+    height:550px;
+    margin-top:20px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.category{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.category-card{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:20px;
+    border:1px solid #e5e7eb;
+}
+
+.category-card strong{
+    font-size:1.2rem;
+}
+
+.video-wrap{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    border-radius:12px;
+    overflow:hidden;
+    background:#000;
+}
+
+.video-wrap iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.article-list{
+    list-style:none;
+    padding:0;
+}
+
+.article-list li{
+    margin-bottom:12px;
+}
+
+.article-list a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.article-list a:hover{
+    text-decoration:underline;
+}
+
+.button{
+    display:inline-block;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.button:hover{
+    background:#1d4ed8;
+}
+
+
+
+.post-card{
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:25px;
+    background:#fafafa;
+}
+
+.post-card h3{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:1.3rem;
+    line-height:1.5;
+}
+
+.post-card p{
+    margin-bottom:20px;
+}
+
+.post-category{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1e40af;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:0.9rem;
+    font-weight:bold;
+}
+
+.post-date{
+    color:#666;
+    font-size:0.95rem;
+    margin:8px 0 14px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+}
+
+@media(max-width:600px){
+    header{
+        padding:70px 20px;
+    }
+
+    header h1{
+        font-size:3rem;
+    }
+
+    #chartdiv{
+        height:420px;
+    }
+}
+
+
+.series-intro{
+    color:#555;
+    margin-bottom:22px;
+}
+.series-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+.post-card{
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:24px;
+    background:#fafafa;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.post-card h3{
+    margin:2px 0 4px;
+    font-size:1.22rem;
+    line-height:1.5;
+}
+.post-card p{
+    margin:0 0 12px;
+    flex:1;
+}
+.post-category{
+    align-self:flex-start;
+}
+.post-date{
+    color:#666;
+    font-size:0.95rem;
+    margin:0 0 6px;
+}
+
+/* Keep the article buttons aligned at the bottom of each grid row */
+.post-card > .button{
+    margin-top:auto;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div class="video-container">
+<video autoplay="" class="header-video video1" muted="" playsinline="">
+<source src="main_background.mp4" type="video/mp4"/>
+</video>
+<video class="header-video video2" muted="" playsinline="">
+<source src="main_background.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="header-overlay"></div>
+<div class="header-content">
+<h1>takaolog</h1>
+<div class="subtitle" style="font-style:italic;">
+        somewhere to somewhere
+    </div>
+</div>
+</header>
+<div class="container">
+<section>
+<h2>Stories</h2>
+<div class="series-grid">
+<article class="post-card">
+<span class="post-category">🇨🇳 廈門</span>
+<h3>廈門に行くことになった日。</h3>
+<div class="post-date">2026.10.20</div>
+<a class="button" href="xiamen3.html">記事を読む →</a>
+</article>
+
+<article class="post-card">
+<span class="post-category">🇨🇳 廈門</span>
+<h3>旅を発信することについて、考えた。</h3>
+<div class="post-date">2026.10.12</div>
+<a class="button" href="xiamen2.html">記事を読む →</a>
+</article>
+
+<article class="post-card">
+<span class="post-category">🇨🇳 廈門</span>
+<h3>廈門で、毎晩通うpubができた。</h3>
+<div class="post-date">2026.10.6</div>
+<a class="button" href="xiamen1.html">記事を読む →</a>
+</article>
+<article class="post-card">
+  <span class="post-category">🇻🇳 ニャチャン</span>
+  <h3>24日間のビーチライフ</h3>
+  <div class="post-date">2026.09.19</div>
+  <a class="button" href="nha-trang.html">記事を読む →</a>
+</article>
+
+<article class="post-card">
+  <span class="post-category">🇻🇳 ホーチミン</span>
+  <h3>（前編）旅先で、何度も聞かれたこと。</h3>
+  <div class="post-date">2026.09.24</div>
+  <a class="button" href="saigon1.html">記事を読む →</a>
+</article>
+<article class="post-card">
+  <span class="post-category">🇻🇳 ホーチミン</span>
+  <h3>（後編）旅先で、何度も聞かれたこと。</h3>
+  <div class="post-date">2026.09.24</div>
+  <a class="button" href="saigon2.html">記事を読む →</a>
+</article>
+
+</div>
+</section>
+
+<section>
+<h2>Footprints</h2>
+<div id="chartdiv"></div>
+</section>
+<section>
+<h2>Visuals</h2>
+<p>
+        📷 <a href="https://www.instagram.com/takaolog/" rel="noopener noreferrer" target="_blank">
+        旅の映像はこちらから</a>
+</p>
+</section>
+</div>
+<footer>
+    © 2026 takaolog
+</footer>
+<script>
+var visitedplaces_config = {
+  "map": "world",
+  "projection": "geoOrthographic",
+  "theme": "light-blue",
+  "water": 1,
+  "graticule": 0,
+  "names": 1,
+  "duration": 2000,
+  "placeduration": 200,
+  "slider": 0,
+  "autoplay": 1,
+  "autozoom": "none",
+  "autostep": 1,
+  "pie": 1,
+  "home": "JP",
+  "data": [
+    {
+      "places": [
+        "US",
+        "CA"
+      ],
+      "text": "North America",
+      "position": {
+        "zoomLevel": 1.6,
+        "geoPoint": {
+          "longitude": -100.6,
+          "latitude": 44.4
+        },
+        "rotationX": 100.6,
+        "rotationY": -44.4
+      }
+    },
+    {
+      "places": [
+        "GB",
+        "FR",
+        "DE",
+        "ES",
+        "BE",
+        "RU",
+        "FI",
+        "EE",
+        "LV",
+        "LT",
+        "PL",
+        "PT",
+        "IE",
+        "NL",
+        "CZ",
+        "AT",
+        "SK",
+        "HU"
+      ],
+      "text": "Europe",
+      "position": {
+        "zoomLevel": 2.4,
+        "geoPoint": {
+          "longitude": 12.1,
+          "latitude": 53.3
+        },
+        "rotationX": -12.1,
+        "rotationY": -53.3
+      }
+    },
+    {
+      "places": [
+        "HK",
+        "KR",
+        "TW",
+        "VN",
+        "SG",
+        "TH",
+        "KH",
+        "MY",
+        "ID",
+        "PH",
+        "CN",
+        "IN"
+      ],
+      "text": "Asia",
+      "position": {
+        "zoomLevel": 1.5,
+        "geoPoint": {
+          "longitude": 83.8,
+          "latitude": 33.3
+        },
+        "rotationX": -83.8,
+        "rotationY": -33.3
+      }
+    },
+    {
+      "places": [
+        "GU",
+        "MP",
+        "PW"
+      ],
+      "text": "Oceania",
+      "position": {
+        "zoomLevel": 1.9,
+        "geoPoint": {
+          "longitude": 134.3,
+          "latitude": -25.7
+        },
+        "rotationX": -134.3,
+        "rotationY": 25.7
+      }
+    },
+    {
+      "places": [
+        "JP"
+      ],
+      "text": "My Home",
+      "position": {
+        "zoomLevel": 1,
+        "geoPoint": {
+          "longitude": 0,
+          "latitude": 0
+        },
+        "rotationX": -137.8,
+        "rotationY": -37.5
+      }
+    }
+  ]
+};
+</script>
+<script src="https://visitedplaces.com/embed.js"></script>
+<script>
+setTimeout(function(){
+    if (window.location.search) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+}, 1500);
+</script>
+<script>
+(function(){
+    const video1 = document.querySelector('.video1');
+    const video2 = document.querySelector('.video2');
+
+    if (!video1 || !video2) return;
+
+    let active = video1;
+    let next = video2;
+    let fading = false;
+
+    function crossfade(){
+        if (fading || !active.duration) return;
+        fading = true;
+
+        next.currentTime = 0;
+        next.play().catch(() => {});
+
+        next.style.opacity = '1';
+        active.style.opacity = '0';
+
+        setTimeout(function(){
+            active.pause();
+            active.currentTime = 0;
+            const temp = active;
+            active = next;
+            next = temp;
+            fading = false;
+            active.addEventListener('timeupdate', checkTime);
+        }, 500);
+    }
+
+    function checkTime(){
+        if (!active.duration || fading) return;
+        if (active.currentTime >= active.duration - 0.5){
+            active.removeEventListener('timeupdate', checkTime);
+            crossfade();
+        }
+    }
+
+    video1.addEventListener('timeupdate', checkTime);
+})();
+</script>
+</body>
+</html>

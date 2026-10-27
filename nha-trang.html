@@ -112,7 +112,7 @@
     }
     .nav-article.prev{border-left-color:#4a90e2}
     .nav-article.related{border-left-color:#4a90e2}
-    .nav-article.home{
+    .nav-article.stories{
       grid-column:1 / -1;
       border-left-color:#777;
       background:#fff;
@@ -165,7 +165,7 @@
     @media(max-width:640px){
       .article-nav{grid-template-columns:1fr;gap:12px;margin-top:44px;padding-top:20px}
       .nav-article{padding:16px 18px}
-      .nav-article.home{grid-column:auto}
+      .nav-article.stories{grid-column:auto}
       .nav-title{font-size:1rem}
     }
 
@@ -411,20 +411,27 @@
 
   <br>
   
-  <div class="article-nav">
+  <nav class="article-nav" aria-label="記事ナビゲーション">
     <a class="nav-article related" href="xiamen3.html">
-    <div class="nav-label">← 廈門の記事を読む</div>
-    <div class="nav-title">廈門に行くことになった日。</div>
+      <div class="nav-label">← 廈門の記事を読む</div>
+      <div class="nav-title">廈門に行くことになった日。</div>
     </a>
-    <a class="nav-article nav-instagram" href="https://www.instagram.com/p/Ddd9wb8NWNs/" target="_blank" rel="noopener noreferrer">
-      <div class="nav-label">ニャチャンの映像を見る →</div>
-      <div class="nav-title">Instagram</div>
+
+    <a
+      class="nav-article nav-instagram"
+      href="https://www.instagram.com/p/Ddd9wb8NWNs/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="nav-label">ニャチャンの映像を見る ↗</div>
+      <div class="nav-title">Instagram <span class="nav-subtitle">Nha Trang short movie</span></div>
     </a>
-    <a class="nav-article home" href="https://takaolog.jp/stories.html">
-    <div class="nav-label">Storiesへ →</div>
-    <div class="nav-title">takaolog <span class="nav-subtitle">somewhere to somewhere</span></div>
+
+    <a class="nav-article stories" href="https://takaolog.jp/stories.html">
+      <div class="nav-label">Stories一覧へ →</div>
+      <div class="nav-title">takaolog <span class="nav-subtitle">somewhere to somewhere</span></div>
     </a>
-  </div>
+  </nav>
 
 </main>
 </body>

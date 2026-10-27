@@ -26,13 +26,73 @@ figure{margin:28px 0 34px}figure img{display:block;width:100%;height:auto;border
 .toc a:hover{color:#666}
 .article-body h2{scroll-margin-top:20px}
 .closing-photo{margin-top:38px;margin-bottom:34px}
-.article-nav{margin-top:56px;padding-top:24px;border-top:1px solid #ddd;display:grid;grid-template-columns:1fr;gap:16px}
-.nav-article{display:block;text-decoration:none;color:inherit;background:#f7f7f7;border:1px solid #ddd;border-radius:14px;padding:20px 22px}
-.nav-article.related{border-left:5px solid #4a90e2}
-.nav-article.home{border-left:5px solid #777}
-.nav-label{font-size:.9rem;color:#666;margin-bottom:8px;font-weight:700}
-.nav-title{font-size:1.08rem;font-weight:800;line-height:1.5;color:#222}
-.nav-subtitle{display:inline;margin-top:0;font-size:.94rem;color:#555;line-height:1.6;font-style:italic;font-weight:400}
+.article-nav{
+  margin-top:56px;
+  padding-top:24px;
+  border-top:1px solid #ddd;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.nav-article{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  text-decoration:none;
+  color:inherit;
+  background:#f8f8f8;
+  border:1px solid #e2e2e2;
+  border-left:4px solid #999;
+  border-radius:12px;
+  padding:18px 20px;
+  transition:background-color .18s ease,border-color .18s ease,transform .18s ease;
+}
+.nav-article.prev{border-left-color:#4a90e2}
+.nav-article.related{border-left-color:#4a90e2}
+.nav-article.home{
+  grid-column:1 / -1;
+  border-left-color:#777;
+  background:#fff;
+}
+.nav-article:hover{
+  background:#f0f4f8;
+  border-color:#c9d7e5;
+  transform:translateY(-2px);
+}
+.nav-article:focus-visible{
+  outline:2px solid #4a90e2;
+  outline-offset:3px;
+}
+.nav-label{
+  font-size:.86rem;
+  color:#666;
+  margin-bottom:7px;
+  font-weight:700;
+  line-height:1.5;
+}
+.nav-title{
+  font-size:1.02rem;
+  font-weight:700;
+  line-height:1.6;
+  color:#222;
+  overflow-wrap:anywhere;
+}
+.nav-subtitle{
+  display:inline;
+  margin:0 0 0 .45em;
+  font-size:.9rem;
+  color:#666;
+  line-height:1.6;
+  font-style:italic;
+  font-weight:400;
+}
+@media(max-width:640px){
+  .article-nav{grid-template-columns:1fr;gap:12px;margin-top:44px;padding-top:20px}
+  .nav-article{padding:16px 18px}
+  .nav-article.home{grid-column:auto}
+  .nav-title{font-size:1rem}
+}
 @media(max-width:640px){main{padding-top:34px}h1{font-size:1.65rem}}
 </style>
 </head>

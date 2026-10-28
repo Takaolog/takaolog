@@ -26,6 +26,9 @@ main{
   background:#fff;
 }
 h1{
+  max-width:660px;
+  margin-left:auto;
+  margin-right:auto;
   font-family:inherit;
   font-size:2rem;
   font-weight:500;
@@ -42,9 +45,12 @@ h2{
   padding-left:12px;
   border-left:4px solid #888;
 }
-p{margin:0 0 1em}
+p{margin:0 0 1.4em}
 .article-body{
+  max-width:660px;
+  margin:0 auto;
   font-size:1rem;
+  line-height:2.05;
   padding-bottom:7.5em;
 }
 .article-body h2{scroll-margin-top:20px}
@@ -113,7 +119,8 @@ p{margin:0 0 1em}
 @media(max-width:640px){
   main{padding:48px 22px 64px}
   h1{font-size:1.75rem;margin-bottom:2.8em}
-  .article-body{padding-bottom:6em}
+  .article-body{line-height:2.0;padding-bottom:6em}
+  p{margin-bottom:1.3em}
   .article-nav{
     grid-template-columns:1fr;
     row-gap:4px;

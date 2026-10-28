@@ -41,12 +41,12 @@ h2{margin:0 0 24px;padding:0;border:0;font-size:1.55rem;line-height:1.4;font-wei
  display:grid;grid-template-columns:1fr;gap:5px;
  padding:20px 0 22px;margin:0;border:0;border-bottom:1px solid #e7e7e7;
  border-radius:0;background:transparent;box-shadow:none;
+ color:#292929;text-decoration:none;transition:color .18s ease;
 }
 .post-card:first-child{border-top:1px solid #e7e7e7;}
-.post-card h3{order:2;margin:1px 0 0;font-size:1.2rem;line-height:1.6;font-weight:500;}
-.post-card h3 a{color:#292929;text-decoration:none;transition:color .18s ease;}
-.post-card h3 a:hover{color:#777;text-decoration:none;}
-.post-card h3 a:focus-visible{outline:2px solid #999;outline-offset:4px;}
+.post-card:hover{color:#777;}
+.post-card:focus-visible{outline:2px solid #999;outline-offset:4px;}
+.post-card h3{order:2;margin:1px 0 0;font-size:1.2rem;line-height:1.6;font-weight:500;color:inherit;}
 .post-category{order:0;display:inline-block;align-self:start;padding:0;background:none;color:#777;border-radius:0;font-size:.85rem;font-weight:500;}
 .post-date{order:1;color:#888;font-size:.82rem;margin:0;}
 .button{order:3;display:inline-block;justify-self:start;align-self:start;margin:5px 0 0;padding:0;background:none;color:#666;text-decoration:none;font-size:.9rem;border-radius:0;}
@@ -92,49 +92,42 @@ footer{text-align:center;padding:22px 20px 34px;color:#999;font-size:.8rem;}
 <section>
 <h2>Stories</h2>
 <div class="series-grid">
-<article class="post-card">
+<a class="post-card" href="xiamen4.html" aria-label="最後の夜">
 <span class="post-category">🇨🇳 廈門</span>
-<h3><a href="xiamen4.html">最後の夜</a></h3>
+<h3>最後の夜</h3>
 <div class="post-date">2026.10.17</div>
+</a>
 
-</article>
-
-<article class="post-card">
+<a class="post-card" href="xiamen2.html" aria-label="旅を発信することについて、考えた。">
 <span class="post-category">🇨🇳 廈門</span>
-<h3><a href="xiamen2.html">旅を発信することについて、考えた。</a></h3>
+<h3>旅を発信することについて、考えた。</h3>
 <div class="post-date">2026.10.12</div>
-
-</article>
-<article class="post-card">
+</a>
+<a class="post-card" href="xiamen1.html" aria-label="廈門で、毎晩通うpubができた。">
 <span class="post-category">🇨🇳 廈門</span>
-<h3><a href="xiamen1.html">廈門で、毎晩通うpubができた。</a></h3>
+<h3>廈門で、毎晩通うpubができた。</h3>
 <div class="post-date">2026.10.6</div>
-
-</article>
-<article class="post-card">
+</a>
+<a class="post-card" href="xiamen3.html" aria-label="廈門に行くことになった日">
 <span class="post-category">🇨🇳 廈門</span>
-<h3><a href="xiamen3.html">廈門に行くことになった日</a></h3>
+<h3>廈門に行くことになった日</h3>
 <div class="post-date">2026.10.1</div>
-
-</article>
-<article class="post-card">
+</a>
+<a class="post-card" href="saigon1.html" aria-label="（前編）旅先で、何度も聞かれたこと。">
 <span class="post-category">🇻🇳 ホーチミン</span>
-<h3><a href="saigon1.html">（前編）旅先で、何度も聞かれたこと。</a></h3>
+<h3>（前編）旅先で、何度も聞かれたこと。</h3>
 <div class="post-date">2026.09.24</div>
-
-</article>
-<article class="post-card">
+</a>
+<a class="post-card" href="saigon2.html" aria-label="（後編）旅先で、何度も聞かれたこと。">
 <span class="post-category">🇻🇳 ホーチミン</span>
-<h3><a href="saigon2.html">（後編）旅先で、何度も聞かれたこと。</a></h3>
+<h3>（後編）旅先で、何度も聞かれたこと。</h3>
 <div class="post-date">2026.09.24</div>
-
-</article>
-<article class="post-card">
+</a>
+<a class="post-card" href="nha-trang.html" aria-label="24日間のビーチライフ">
 <span class="post-category">🇻🇳 ニャチャン</span>
-<h3><a href="nha-trang.html">24日間のビーチライフ</a></h3>
+<h3>24日間のビーチライフ</h3>
 <div class="post-date">2026.09.19</div>
-
-</article>
+</a>
 </div>
 <p style="margin:28px 0 0;"><a class="back-link" href="index.html">← トップページへ戻る</a></p>
 </section>

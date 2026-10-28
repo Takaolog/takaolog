@@ -413,7 +413,12 @@ section h2{
     border-radius:0;
     background:transparent;
     box-shadow:none;
+    color:var(--ink);
+    text-decoration:none;
+    transition:color .18s ease;
 }
+.post-card:hover{color:#777;}
+.post-card:focus-visible{outline:2px solid #999;outline-offset:4px;}
 .post-card:first-child{border-top:1px solid var(--rule);}
 .post-category{
     display:inline;
@@ -439,16 +444,7 @@ section h2{
     font-weight:500;
     line-height:1.7;
 }
-.post-card h3 a{
-    color:var(--ink);
-    text-decoration:none;
-    text-underline-offset:4px;
-    transition:color .2s ease;
-}
-.post-card h3 a:hover{
-    color:#666;
-    text-decoration:underline;
-}
+.post-card h3{color:inherit;}
 .stories-all{
     text-align:right;
     margin:22px 0 0;
@@ -492,7 +488,7 @@ footer{
 }
 @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
-    .post-card h3 a{transition:none;}
+    .post-card{transition:none;}
 }
 
 </style>
@@ -519,20 +515,20 @@ footer{
 <section id="stories">
 <h2>Stories</h2>
 <div class="series-grid">
-<article class="post-card">
+<a class="post-card" href="xiamen4.html" aria-label="最後の夜">
 <div><span class="post-category">🇨🇳 廈門</span><time class="post-date" datetime="2026-10-17">2026.10.17</time></div>
-<h3><a href="xiamen4.html">最後の夜</a></h3>
-</article>
+<h3>最後の夜</h3>
+</a>
 
-<article class="post-card">
+<a class="post-card" href="xiamen1.html" aria-label="廈門で、毎晩通うpubができた">
 <div><span class="post-category">🇨🇳 廈門</span><time class="post-date" datetime="2026-10-06">2026.10.6</time></div>
-<h3><a href="xiamen1.html">廈門で、毎晩通うpubができた</a></h3>
-</article>
+<h3>廈門で、毎晩通うpubができた</h3>
+</a>
 
-<article class="post-card">
+<a class="post-card" href="xiamen3.html" aria-label="廈門に行くことになった日">
 <div><span class="post-category">🇨🇳 廈門</span><time class="post-date" datetime="2026-10-01">2026.10.1</time></div>
-<h3><a href="xiamen3.html">廈門に行くことになった日</a></h3>
-</article>
+<h3>廈門に行くことになった日</h3>
+</a>
 
 </div>
 <p class="stories-all">

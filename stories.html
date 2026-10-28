@@ -38,7 +38,7 @@ h2{margin:0 0 24px;padding:0;border:0;font-size:1.55rem;line-height:1.4;font-wei
 .series-intro{color:#666;margin:0 0 24px;}
 .series-grid{display:block;}
 .post-card{
- display:grid;grid-template-columns:1fr;gap:5px;
+ display:grid;grid-template-columns:auto auto 1fr;column-gap:12px;row-gap:5px;
  padding:20px 0 22px;margin:0;border:0;border-bottom:1px solid #e7e7e7;
  border-radius:0;background:transparent;box-shadow:none;
  color:#292929;text-decoration:none;transition:color .18s ease;
@@ -47,19 +47,16 @@ h2{margin:0 0 24px;padding:0;border:0;font-size:1.55rem;line-height:1.4;font-wei
 .post-card:hover{color:#777;}
 .post-card:focus-visible{outline:2px solid #999;outline-offset:4px;}
 .post-card h3{order:2;margin:1px 0 0;font-size:1.2rem;line-height:1.6;font-weight:500;color:inherit;}
-.post-category{order:0;display:inline-block;align-self:start;padding:0;background:none;color:#777;border-radius:0;font-size:.85rem;font-weight:500;}
-.post-date{order:1;color:#888;font-size:.82rem;margin:0;}
-.button{order:3;display:inline-block;justify-self:start;align-self:start;margin:5px 0 0;padding:0;background:none;color:#666;text-decoration:none;font-size:.9rem;border-radius:0;}
+.post-category{grid-column:1;grid-row:1;display:inline-block;align-self:start;padding:0;background:none;color:#777;border-radius:0;font-size:.85rem;font-weight:500;}
+.post-date{grid-column:2;grid-row:1;color:#888;font-size:.82rem;margin:0;}
+.post-card h3{grid-column:1 / -1;grid-row:2;}
+.button{grid-column:1 / -1;grid-row:3;display:inline-block;justify-self:start;align-self:start;margin:5px 0 0;padding:0;background:none;color:#666;text-decoration:none;font-size:.9rem;border-radius:0;}
 .button:hover{background:none;color:#111;text-decoration:underline;text-underline-offset:4px;}
 .back-link{color:#555;text-decoration:none;font-weight:500;font-size:.92rem;}
 .back-link:hover{color:#111;text-decoration:underline;text-underline-offset:4px;}
 footer{text-align:center;padding:22px 20px 34px;color:#999;font-size:.8rem;}
 @media(min-width:620px){
- .post-card{grid-template-columns:1fr auto;column-gap:24px;align-items:baseline;}
- .post-category{grid-column:1;grid-row:1;}
- .post-date{grid-column:2;grid-row:1;text-align:right;}
- .post-card h3{grid-column:1;grid-row:2;}
- .post-card .button{grid-column:2;grid-row:2;white-space:nowrap;}
+ .post-card{align-items:baseline;}
 }
 @media(max-width:600px){
  header{padding:70px 20px;}

@@ -345,6 +345,156 @@ footer{
     .post-card h3{font-size:1.12rem;}
 }
 
+
+/* takaolog homepage: one quiet canvas, with each section given room to breathe */
+:root{
+    color-scheme:light;
+    --page:#fafafa;
+    --ink:#292929;
+    --muted:#777;
+    --rule:#dedede;
+}
+html{scroll-behavior:smooth;}
+body{
+    background:var(--page);
+    color:var(--ink);
+    line-height:1.85;
+}
+header{
+    padding:100px 20px;
+}
+header h1{
+    font-size:clamp(2.8rem, 6vw, 4rem);
+    font-weight:600;
+    letter-spacing:.025em;
+}
+header .subtitle{
+    margin-top:12px;
+    font-size:1rem;
+    letter-spacing:.12em;
+    color:rgba(255,255,255,.82);
+}
+.container{
+    max-width:760px;
+    margin:0 auto;
+    padding:26px 28px 20px;
+}
+section{
+    background:transparent;
+    padding:34px 0 42px;
+    margin:0;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+}
+section + section{
+    border-top:1px solid var(--rule);
+}
+section h2{
+    margin:0 0 26px;
+    padding:0;
+    border:0;
+    color:#333;
+    font-size:1.12rem;
+    line-height:1.5;
+    font-weight:500;
+    letter-spacing:.12em;
+}
+.series-grid{
+    display:block;
+    margin-top:0;
+}
+.post-card{
+    display:block;
+    padding:19px 0 21px;
+    margin:0;
+    border:0;
+    border-bottom:1px solid var(--rule);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+}
+.post-card:first-child{border-top:1px solid var(--rule);}
+.post-category{
+    display:inline;
+    padding:0;
+    margin-right:12px;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:var(--muted);
+    font-size:.86rem;
+    font-weight:400;
+}
+.post-date{
+    display:inline;
+    margin:0;
+    color:#929292;
+    font-size:.84rem;
+    font-weight:400;
+}
+.post-card h3{
+    margin:7px 0 0;
+    font-size:1.18rem;
+    font-weight:500;
+    line-height:1.7;
+}
+.post-card h3 a{
+    color:var(--ink);
+    text-decoration:none;
+    text-underline-offset:4px;
+    transition:color .2s ease;
+}
+.post-card h3 a:hover{
+    color:#666;
+    text-decoration:underline;
+}
+.stories-all{
+    text-align:right;
+    margin:22px 0 0;
+}
+.stories-all a,
+#visuals a{
+    color:#555;
+    text-decoration:none;
+    font-weight:400;
+    text-underline-offset:4px;
+}
+.stories-all a:hover,
+#visuals a:hover{
+    text-decoration:underline;
+}
+#chartdiv{
+    width:100%;
+    height:500px;
+    margin:4px 0 0;
+    border-radius:0;
+    overflow:hidden;
+}
+#visuals p{
+    margin:0;
+}
+footer{
+    padding:34px 20px 42px;
+    color:#999;
+    font-size:.82rem;
+    letter-spacing:.04em;
+}
+@media(max-width:600px){
+    header{padding:76px 20px;}
+    header h1{font-size:2.8rem;}
+    .container{padding:12px 22px 10px;}
+    section{padding:30px 0 34px;}
+    section h2{margin-bottom:22px;}
+    .post-card{padding:17px 0 19px;}
+    .post-card h3{font-size:1.08rem;}
+    #chartdiv{height:390px;}
+}
+@media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .post-card h3 a{transition:none;}
+}
+
 </style>
 </head>
 <body>
@@ -366,7 +516,7 @@ footer{
 </div>
 </header>
 <div class="container">
-<section>
+<section id="stories">
 <h2>Stories</h2>
 <div class="series-grid">
 <article class="post-card">
@@ -390,11 +540,11 @@ footer{
 </p>
 </section>
 
-<section>
+<section id="footprints">
 <h2>Footprints</h2>
 <div id="chartdiv"></div>
 </section>
-<section>
+<section id="visuals">
 <h2>Visuals</h2>
 <p>
         📷 <a href="https://www.instagram.com/takaolog/" rel="noopener noreferrer" target="_blank">
